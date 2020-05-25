@@ -6,6 +6,9 @@ class HCSR04Provider():
         self.echo=echo
         self.trigger=trigger
         GPIO.setmode(GPIO.BCM)
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(self.trigger, GPIO.OUT)
+        GPIO.setup(self.echo, GPIO.IN)  
 
     def getValue(self):
         # Get distance measurement

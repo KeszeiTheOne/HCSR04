@@ -17,8 +17,8 @@ class RandomProvider():
 
 @click.command()
 @click.argument("iteration", callback=callback,type=click.INT, default=5)
-@click.option("-e","--echo","echo",required=True)
-@click.option("-t","--trigger","trigger",required=True)
+@click.option("-e","--echo","echo",required=True,type=click.INT)
+@click.option("-t","--trigger","trigger",required=True,type=click.INT)
 
 
 
