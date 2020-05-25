@@ -24,8 +24,7 @@ class HCSR04Provider():
 
         while GPIO.input(self.echo) == GPIO.HIGH:
             pulse_end = time()
-            
-        GPIO.cleanup()
+
         pulse_duration = pulse_end - pulse_start
         # Distance = 17160.5 * Time (unit cm) at sea level and 20C
         distance = pulse_duration * 17160.5

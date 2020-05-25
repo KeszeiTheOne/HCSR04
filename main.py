@@ -4,6 +4,7 @@ import click
 import random
 import statistics
 from HCSR04 import HCSR04Provider
+import RPi.GPIO as GPIO
 
 def callback(ctx, param, value):
     if value <= 4:
@@ -28,6 +29,7 @@ def hello(iteration, echo, trigger):
     values=[]
     for i in range(0, iteration):
         values.append(provider.getValue())
+    GPIO.cleanup()
     values.sort()
     values.remove(max(values))
     values.remove(min(values))
